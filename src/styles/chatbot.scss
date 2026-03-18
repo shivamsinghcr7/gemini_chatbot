@@ -1,0 +1,97 @@
+.heading {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: purple;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .chatbot_card {
+    background-color: #cdcbcb;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    width: 300px;
+    height: 80vh;
+    position: relative;
+
+    .chatbot_history {
+      height: 74vh;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      // justify-content: flex-end; // push messages to bottom
+      scrollbar-width: thin;
+      scrollbar-color: rgba(128, 0, 128, 0.8) #cdcbcb;
+
+      @mixin chatPops {
+        border: 1px solid purple;
+        border-radius: 20px;
+        width: fit-content;
+        max-width: 80%;
+        margin-bottom: 8px;
+        margin-right: 5px;
+        font-size: 12px;
+        padding: 8px 12px;
+        font-weight: 500;
+        word-wrap: break-word;
+      }
+
+      .chatbot_message_user {
+        background-color: purple;
+        color: white;
+        align-self: flex-end; //right
+        @include chatPops;
+      }
+
+      .chatbot_message_bot {
+        background-color: rgb(228, 130, 228);
+        color: black;
+        align-self: flex-start; // left
+        @include chatPops;
+      }
+    }
+
+    .chatbot_input {
+      display: flex;
+      width: 90%;
+      position: absolute;
+      bottom: 1rem;
+
+      input {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid purple;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        font-size: 0.8rem;
+        color: purple;
+        font-weight: 500;
+        outline: none;
+      }
+
+      button {
+        background-color: purple;
+        color: white;
+        border: none;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        font-weight: 500;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: rgb(189, 13, 189);
+        color: white;
+      }
+    }
+  }
+}
