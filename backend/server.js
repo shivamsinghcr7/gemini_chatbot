@@ -12,7 +12,8 @@ const PORT = process.env.SERVER_PORT || 5000;
 const app = express();
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    // origin: "http://localhost:5173",
+    origin: "https://gemini-chatbot-gamma-swart.vercel.app/",
   }),
 );
 app.use(express.json());
